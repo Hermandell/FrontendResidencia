@@ -9,13 +9,16 @@ import Servicios from "./pages/Servicios";
 import AcercaDe from "./pages/AcercaDe";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
+import NavBar from "./Components/NavBar/NavBar";
 
 
 function App() {
   return (
+    <>
+    <NavBar />
     <BrowserRouter>
         <Routes>
-          <Route  path="/home" element={<Home />} />
+          <Route  path="/" element={<Home />} />
           <Route  path="/productos" element={<Productos />} />
           <Route  path="/servicios" element={<Servicios />} />
           <Route  path="/acerca-de" element={<AcercaDe />} />
@@ -23,6 +26,7 @@ function App() {
           <Route  path="/register" element={<SignUp />} />
         </Routes>
     </BrowserRouter>
+    </>
   )
 }
 
