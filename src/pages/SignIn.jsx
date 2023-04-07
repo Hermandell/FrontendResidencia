@@ -28,6 +28,7 @@ function SignIn() {
       setLoading(false);
       resetForm();
       localStorage.setItem('username', response.data.user.username);
+      localStorage.setItem('token', response.data.jwt);
       navigate('/home');
     } catch (error) {
       console.log(error);

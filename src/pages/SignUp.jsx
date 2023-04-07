@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate  } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
@@ -12,7 +12,10 @@ function SignUp() {
     email: '',
     username: '',
     password: '',
-    confirmPassword: ''
+    confirmPassword: '',
+    name: '',
+    apellidos: '',
+    address: ''
   };
 
   const validationSchema = Yup.object({
@@ -25,7 +28,10 @@ function SignUp() {
       .required('Este campo es obligatorio'),
     confirmPassword: Yup.string()
       .oneOf([Yup.ref('password')], 'Las contraseñas deben coincidir')
-      .required('Este campo es obligatorio')
+      .required('Este campo es obligatorio'),
+    name: Yup.string().required('Este campo es obligatorio'),
+    apellidos: Yup.string().required('Este campo es obligatorio'),
+    address: Yup.string().required('Este campo es obligatorio')
   });
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
@@ -35,6 +41,9 @@ function SignUp() {
         username: values.username,
         email: values.email,
         password: values.password,
+        name: values.name,
+        apellidos: values.apellidos,
+        adress: values.address
       });
       setLoading(false);
       resetForm();
@@ -64,6 +73,21 @@ function SignUp() {
               <ErrorMessage name="email" component="div" className="text-danger" />
             </div>
             <div className="mb-3">
+              <label htmlFor="name" className="form-label">Nombre</label>
+              <Field type="text" name="name" id="name" className="form-control" />
+              <ErrorMessage name="name" component="div" className="text-danger" />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="apellidos" className="form-label">Apellidos</label>
+              <Field type="text" name="apellidos" id="apellidos" className="form-control" />
+              <ErrorMessage name="apellidos" component="div" className="text-danger" />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="address" className="form-label">Dirección</label>
+              <Field type="text" name="address" id="address" className="form-control" />
+              <ErrorMessage name="address" component="div" className="text-danger" />
+            </div>
+            <div className="mb-3">
               <label htmlFor="username" className="form-label">Nombre de usuario</label>
               <Field type="text" name="username" id="username" className="form-control" />
               <ErrorMessage name="username" component="div" className="text-danger" />
@@ -91,7 +115,7 @@ function SignUp() {
         )}
       </Formik>
     </div>
-);
+  );
 }
 
 export default SignUp;
