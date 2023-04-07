@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Servicio = ({ imagen, titulo, descripcion }) => {
-  console.log(imagen);
     return (
       <div className="col-md-6 col-lg-4">
         <div className="card border-0">
