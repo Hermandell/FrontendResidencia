@@ -70,7 +70,7 @@ const NavBar = () => {
                 </div>
                 <div className="dropdown-divider"></div>
                 <div className="dropdown-item text-end">
-                  <div>Total: $30</div>
+                  <div>Total: $70</div>
                   <button className="btn btn-primary mt-3">Pagar</button>
                 </div>
               </div>
