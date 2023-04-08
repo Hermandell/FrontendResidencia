@@ -66,7 +66,7 @@ const Productos = () => {
           ) : (
             filteredProductos.map((product, index) => (
               <div className="col-12 col-md-6 col-lg-4 my-3" key={index}>
-                <Producto imagen={`http://localhost:1337${product.attributes.img.data.attributes.formats && product.attributes.img.data.attributes.formats.large ? product.attributes.img.data.attributes.formats.large.url : product.attributes.img.data.attributes.formats.thumbnail.url}`} nombre={product.attributes.Nombre} precio={product.attributes.Precio} />
+                <Producto id={product.id} imagen={`http://localhost:1337${product.attributes.img.data.attributes.formats && product.attributes.img.data.attributes.formats.large ? product.attributes.img.data.attributes.formats.large.url : product.attributes.img.data.attributes.formats.thumbnail.url}`} nombre={product.attributes.Nombre} precio={product.attributes.Precio} />
               </div>
             ))
           )}

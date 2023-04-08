@@ -18,7 +18,9 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <NavBar />
+        <div className="navbar-container">
+          <NavBar />
+        </div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/productos" element={<Productos />} />
