@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Servicio from './Items/Servicio';
 import Loading from './Items/Loading';
+import { Link } from 'react-router-dom'
 
 const Servicios = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -39,12 +40,14 @@ const Servicios = () => {
             <div className="row">
               {isLoading && <Loading />}
               {!isLoading && servicios.map(servicio => (
-                <Servicio
-                  key={servicio.id}
-                  imagen={`http://localhost:1337${servicio.attributes.img.data.attributes.formats.large.url}`}
-                  titulo={servicio.attributes.titulo}
-                  descripcion={servicio.attributes.tiempo}
-                />
+                <div key={servicio.id}>
+                  <Servicio
+                    id={servicio.id}
+                    imagen={`http://localhost:1337${servicio.attributes.img.data.attributes.formats && servicio.attributes.img.data.attributes.formats.large.url ? servicio.attributes.img.data.attributes.formats.large.url : servicio.attributes.img.data.attributes.formats.thumbnail.url}`}
+                    titulo={servicio.attributes.titulo}
+                    descripcion={servicio.attributes.tiempo}
+                  />
+                </div>
               ))}
             </div>
           </div>
