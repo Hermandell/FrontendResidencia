@@ -10,7 +10,7 @@ const Servicios = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:1337/api/servicios?populate=*', {
+        const response = await fetch('https://residenciabackend.onrender.com/api/servicios?populate=*', {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`,
           },
@@ -29,7 +29,7 @@ const Servicios = () => {
     fetchData();
   }, []);
   servicios.map(item => {
-    console.log('http://localhost:1337' + item.attributes.img.data.attributes.formats.large.url)
+    console.log('https://residenciabackend.onrender.com' + item.attributes.img.data.attributes.formats.large.url)
     console.log(item.attributes.img.data.attributes.formats.large.url);
   })
   return (
@@ -46,7 +46,7 @@ const Servicios = () => {
                   <Servicio
                     id={servicio.id}
                     key={servicio.id}
-                    imagen={`http://localhost:1337${servicio.attributes.img.data.attributes.formats && servicio.attributes.img.data.attributes.formats.large.url ? servicio.attributes.img.data.attributes.formats.large.url : servicio.attributes.img.data.attributes.formats.thumbnail.url}`}
+                    imagen={`https://residenciabackend.onrender.com${servicio.attributes.img.data.attributes.formats && servicio.attributes.img.data.attributes.formats.large.url ? servicio.attributes.img.data.attributes.formats.large.url : servicio.attributes.img.data.attributes.formats.thumbnail.url}`}
                     titulo={servicio.attributes.titulo}
                     descripcion={servicio.attributes.tiempo}
                   />

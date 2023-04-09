@@ -11,7 +11,7 @@ const DetalleServicio = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://localhost:1337/api/servicios/${id}?populate=*`, {
+                const response = await fetch(`https://residenciabackend.onrender.com/api/servicios/${id}?populate=*`, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`,
                     },
@@ -51,7 +51,7 @@ const DetalleServicio = () => {
 
     const handleSubmit = async (values, { setSubmitting, resetForm }) => {
         try {
-            const response = await fetch('http://localhost:1337/api/cotizadors', {
+            const response = await fetch('https://residenciabackend.onrender.com/api/cotizadors', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ const DetalleServicio = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-6">
-                            <img className="img-fluid" src={`http://localhost:1337${servicio.attributes.img.data.attributes.formats.large.url}`} alt={servicio.attributes.titulo} />
+                            <img className="img-fluid" src={`https://residenciabackend.onrender.com${servicio.attributes.img.data.attributes.formats.large.url}`} alt={servicio.attributes.titulo} />
                         </div>
                         <div className="col-md-6">
                             <h2>{servicio.attributes.titulo}</h2>

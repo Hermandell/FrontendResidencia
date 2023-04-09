@@ -12,7 +12,7 @@ const ScreenPago = () => {
     const token = localStorage.getItem('token');
     console.log(token);
     if (token) {
-      fetch('http://localhost:1337/api/users/me', {
+      fetch('https://residenciabackend.onrender.com/api/users/me', {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -87,7 +87,7 @@ const ScreenPago = () => {
       }
     }
 
-    fetch('http://localhost:1337/api/compras', {
+    fetch('https://residenciabackend.onrender.com/api/compras', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

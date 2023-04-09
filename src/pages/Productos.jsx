@@ -10,7 +10,7 @@ const Productos = () => {
 
   useEffect(() => {
     const fetchProductos = async () => {
-      const response = await fetch('http://localhost:1337/api/productos?populate=*', {
+      const response = await fetch('https://residenciabackend.onrender.com/api/productos?populate=*', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
@@ -66,7 +66,7 @@ const Productos = () => {
           ) : (
             filteredProductos.map((product, index) => (
               <div className="col-12 col-md-6 col-lg-4 my-3" key={index}>
-                <Producto id={product.id} imagen={`http://localhost:1337${product.attributes.img.data.attributes.formats && product.attributes.img.data.attributes.formats.large ? product.attributes.img.data.attributes.formats.large.url : product.attributes.img.data.attributes.formats.thumbnail.url}`} nombre={product.attributes.Nombre} precio={product.attributes.Precio} />
+                <Producto id={product.id} imagen={`https://residenciabackend.onrender.com${product.attributes.img.data.attributes.formats && product.attributes.img.data.attributes.formats.large ? product.attributes.img.data.attributes.formats.large.url : product.attributes.img.data.attributes.formats.thumbnail.url}`} nombre={product.attributes.Nombre} precio={product.attributes.Precio} />
               </div>
             ))
           )}

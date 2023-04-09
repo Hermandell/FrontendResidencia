@@ -7,13 +7,13 @@ const Home = () => {
 
   useEffect(() => {
     const getSliders = async () => {
-      const response = await fetch("http://localhost:1337/api/sliders?populate=*");
+      const response = await fetch("https://residenciabackend.onrender.com/api/sliders?populate=*");
       const data = await response.json();
       setSliders(data.data);
     };
 
     const getBlog = async () => {
-      const response = await fetch("http://localhost:1337/api/blogs?populate=*");
+      const response = await fetch("https://residenciabackend.onrender.com/api/blogs?populate=*");
       const data = await response.json();
       console.log(data.data);
       setBlog(data.data);
@@ -21,7 +21,7 @@ const Home = () => {
 
     
     const getMiembros = async () => {
-      const response = await fetch("http://localhost:1337/api/miembros?populate=*");
+      const response = await fetch("https://residenciabackend.onrender.com/api/miembros?populate=*");
       const data = await response.json();
       console.log(data.data);
       setMiembros(data.data);
@@ -50,7 +50,7 @@ const Home = () => {
           <div className="carousel-inner">
             {sliders.map((slider, index) => (
               <div key={index} className={`carousel-item ${index === 0 ? "active" : ""}`}>
-                <img width="10%" height="500" src={'http://localhost:1337'+slider.attributes.img.data.attributes.formats.large.url} className="d-block w-100" alt="..." />
+                <img width="10%" height="500" src={'https://residenciabackend.onrender.com'+slider.attributes.img.data.attributes.formats.large.url} className="d-block w-100" alt="..." />
                 <div className="carousel-caption d-none d-md-block">
                   <h5>{slider.attributes.titulo}</h5>
                   <p>{slider.attributes.descripcion}</p>
@@ -75,7 +75,7 @@ const Home = () => {
         blog.map((item, index) => (
           <div key={index} className="col-md-8">
           <div className="card mb-3">
-            <img src={`http://localhost:1337${item.attributes.img.data.attributes.formats.medium.url}`} alt={item.attributes.titulo}  className="card-img-top"  />
+            <img src={`https://residenciabackend.onrender.com${item.attributes.img.data.attributes.formats.medium.url}`} alt={item.attributes.titulo}  className="card-img-top"  />
             <div className="card-body">
               <h5 className="card-title">{item.attributes.titulo}</h5>
               <p className="card-text">{item.attributes.descripcion}</p>
@@ -92,7 +92,7 @@ const Home = () => {
           {/* Iterar a través de la lista de miembros y crear una columna para cada miembro */}
           {miembros.map((miembro, index) => (
                 <div key={index} className="col-md-6">
-                  <img src={`http://localhost:1337${miembro.attributes.img.data.attributes.formats.medium.url}`} alt={miembro.attributes.nombre} className="rounded-circle" width="150" height="150" />
+                  <img src={`https://residenciabackend.onrender.com${miembro.attributes.img.data.attributes.formats.medium.url}`} alt={miembro.attributes.nombre} className="rounded-circle" width="150" height="150" />
                 </div>
               ))}
         </div>

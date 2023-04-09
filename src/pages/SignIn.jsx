@@ -21,7 +21,7 @@ function SignIn() {
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:1337/api/auth/local', {
+      const response = await axios.post('https://residenciabackend.onrender.com/api/auth/local', {
         identifier: values.usernameOrEmail,
         password: values.password,
       });
