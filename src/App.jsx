@@ -13,9 +13,12 @@ import SignUp from "./pages/SignUp";
 import NavBar from "./Components/NavBar/NavBar";
 import DetalleServicio from "./pages/Items/DetalleServicio";
 import ScreenPago from "./pages/Items/ScreenPago/ScreenPago";
+import Footer from "./Components/Footer/Footer";
+import Contacto from "./pages/Contacto";
 
 
 function App() {
+  
   return (
     <>
       <BrowserRouter>
@@ -27,11 +30,13 @@ function App() {
           <Route path="/productos" element={<Productos />} />
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/servicios/:id" element={<DetalleServicio />} />
-          <Route path="/acerca-de" element={<AcercaDe />} />
+          <Route path="/nosotros" element={<AcercaDe />} />
+          <Route path="/contacto" element={<Contacto />} />
           <Route path="/login" element={<SignIn />} />
           <Route path="/register" element={<SignUp />} />
           <Route path="/pago" element={<ScreenPago />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   )

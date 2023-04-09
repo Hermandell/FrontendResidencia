@@ -62,22 +62,11 @@ const NavBar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
+           
             <li className="nav-item">
-              <button type="button" className="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#cartDropdown" aria-expanded="false" onClick={updateCart}>
-                {/* <span className="badge bg-primary">{totalQuantity}</span> */}
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
-                  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
-                </svg>
-              </button>
-              <div className="dropdown-menu position-absolute" id="cartDropdown">
-                <div className="dropdown-header">Carrito</div>
-                {cartItemsList}
-                <div className="dropdown-divider"></div>
-                <div className="dropdown-item text-end">
-                  <div>Total: ${totalPrice}</div>
-                  <button className="btn btn-primary mt-3">Pagar</button>
-                </div>
-              </div>
+              <Link to="/" className="nav-link">
+                home
+              </Link>
             </li>
             <li className="nav-item">
               <Link to="/servicios" className="nav-link">
@@ -90,7 +79,25 @@ const NavBar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/cv" className="nav-link">
+              <button type="button" className="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#cartDropdown" aria-expanded="false" onClick={updateCart}>
+                {/* <span className="badge bg-primary">{totalQuantity}</span> */}
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
+                  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
+                </svg>
+              </button>
+              <div className="dropdown-menu" id="cartDropdown">
+                <div className="dropdown-header">Carrito</div>
+                {cartItemsList}
+                <div className="dropdown-divider"></div>
+                <div className="dropdown-item text-end">
+                  <div>Total: ${totalPrice}</div>
+                  
+                  <Link to='/pago' className="btn btn-primary mt-3">Pagar</Link>
+                </div>
+              </div>
+            </li>
+            <li className="nav-item">
+              <Link to="/contacto" className="nav-link">
                 Contacto
               </Link>
             </li>

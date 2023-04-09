@@ -96,9 +96,9 @@ const ScreenPago = () => {
       body: JSON.stringify(data)
     })
       .then(response => {
-          setShowModal(true);
-          //loalStorage.removeItem('cartItems');
-        
+        setShowModal(true);
+        //loalStorage.removeItem('cartItems');
+
         console.log(response);
         return response.json();
       })
@@ -113,10 +113,10 @@ const ScreenPago = () => {
   return (
     <div className="container mt-4">
       {showModal && (
-         <div className="alert alert-success d-flex justify-content-center align-items-center" role="alert" style={{backgroundColor: "#22bb33", color: "#FFFFFF"}}>
-         <i className="fas fa-check-circle fa-2x me-2"></i>
-         <div>Compra realizada con éxito</div>
-     </div>
+        <div className="alert alert-success d-flex justify-content-center align-items-center" role="alert" style={{ backgroundColor: "#22bb33", color: "#FFFFFF" }}>
+          <i className="fas fa-check-circle fa-2x me-2"></i>
+          <div>Compra realizada con éxito</div>
+        </div>
       )}
       <div className="row justify-content-center" >
         <div className="col-lg-8">
