@@ -85,23 +85,23 @@ const DetalleServicio = () => {
                             <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
                                 {({ isSubmitting }) => (
                                     <Form>
-                                        <div className="mb-3">
+                                        <div className="mb-1">
                                             <label htmlFor="nombre" className="form-label">Nombre</label>
                                             <Field type="text" name="nombre" className="form-control" />
                                             <ErrorMessage name="nombre" component="div" className="text-danger" />
                                         </div>
-                                        <div className="mb-3">
+                                        <div className="mb-1">
                                             <label htmlFor="correo" className="form-label">Correo electrónico</label>
                                             <Field type="email" name="correo" className="form-control" />
-                                            <ErrorMessage name="nombre" component="div" className="text-danger" />
+                                            <ErrorMessage name="correo" component="div" className="text-danger" />
                                         </div>
-                                        <div className="mb-3">
+                                        <div className="mb-1">
                                             <label htmlFor="telefono" className="form-label">Teléfono</label>
                                             <Field type="tel" name="telefono" className="form-control" />
                                             <ErrorMessage name="telefono" component="div" className="text-danger" />
                                         </div>
 
-                                        <div className="mb-3">
+                                        <div className="mb-1">
                                             <label htmlFor="mensaje" className="form-label">Mensaje</label>
                                             <Field as="textarea" name="mensaje" className="form-control" rows={3} />
                                             <ErrorMessage name="mensaje" component="div" className="text-danger" />

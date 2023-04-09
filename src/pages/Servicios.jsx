@@ -37,17 +37,19 @@ const Servicios = () => {
       <main className="page projects-page">
         <section className="portfolio-block projects-cards">
           <div className="container">
-            <div className="row">
+            <div className="heading">
+              <h2>SERVICIOS DE INGIENERÍA</h2>
+            </div>
               {isLoading && <Loading />}
+            <div className="row">
               {!isLoading && servicios.map(servicio => (
-                <div key={servicio.id}>
                   <Servicio
                     id={servicio.id}
+                    key={servicio.id}
                     imagen={`http://localhost:1337${servicio.attributes.img.data.attributes.formats && servicio.attributes.img.data.attributes.formats.large.url ? servicio.attributes.img.data.attributes.formats.large.url : servicio.attributes.img.data.attributes.formats.thumbnail.url}`}
                     titulo={servicio.attributes.titulo}
                     descripcion={servicio.attributes.tiempo}
                   />
-                </div>
               ))}
             </div>
           </div>

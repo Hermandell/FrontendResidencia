@@ -12,6 +12,7 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import NavBar from "./Components/NavBar/NavBar";
 import DetalleServicio from "./pages/Items/DetalleServicio";
+import ScreenPago from "./pages/Items/ScreenPago/ScreenPago";
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/acerca-de" element={<AcercaDe />} />
           <Route path="/login" element={<SignIn />} />
           <Route path="/register" element={<SignUp />} />
+          <Route path="/pago" element={<ScreenPago />} />
         </Routes>
       </BrowserRouter>
     </>
