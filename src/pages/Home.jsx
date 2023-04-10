@@ -75,7 +75,7 @@ const Home = () => {
         blog.map((item, index) => (
           <div key={index} className="col-md-8">
           <div className="card mb-3">
-            <img src={`https://residenciabackend.onrender.com${item.attributes.img.data.attributes.formats.medium.url}`} alt={item.attributes.titulo}  className="card-img-top"  />
+            <img src={`${item.attributes.img.data.attributes.formats.medium.url}`} alt={item.attributes.titulo}  className="card-img-top"  />
             <div className="card-body">
               <h5 className="card-title">{item.attributes.titulo}</h5>
               <p className="card-text">{item.attributes.descripcion}</p>
@@ -92,7 +92,7 @@ const Home = () => {
           {/* Iterar a través de la lista de miembros y crear una columna para cada miembro */}
           {miembros.map((miembro, index) => (
                 <div key={index} className="col-md-6">
-                  <img src={`https://residenciabackend.onrender.com${miembro.attributes.img.data.attributes.formats.medium.url}`} alt={miembro.attributes.nombre} className="rounded-circle" width="150" height="150" />
+                  <img src={`${miembro.attributes.img.data.attributes.formats.medium.url}`} alt={miembro.attributes.nombre} className="rounded-circle" width="150" height="150" />
                 </div>
               ))}
         </div>

@@ -46,7 +46,7 @@ const Servicios = () => {
                   <Servicio
                     id={servicio.id}
                     key={servicio.id}
-                    imagen={`https://residenciabackend.onrender.com${servicio.attributes.img.data.attributes.formats && servicio.attributes.img.data.attributes.formats.large.url ? servicio.attributes.img.data.attributes.formats.large.url : servicio.attributes.img.data.attributes.formats.thumbnail.url}`}
+                    imagen={`${servicio.attributes.img.data.attributes.formats && servicio.attributes.img.data.attributes.formats.large.url ? servicio.attributes.img.data.attributes.formats.large.url : servicio.attributes.img.data.attributes.formats.thumbnail.url}`}
                     titulo={servicio.attributes.titulo}
                     descripcion={servicio.attributes.tiempo}
                   />

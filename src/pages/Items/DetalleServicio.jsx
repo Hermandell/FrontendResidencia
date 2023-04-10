@@ -75,7 +75,7 @@ const DetalleServicio = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-6">
-                            <img className="img-fluid" src={`https://residenciabackend.onrender.com${servicio.attributes.img.data.attributes.formats.large.url}`} alt={servicio.attributes.titulo} />
+                            <img className="img-fluid" src={`${servicio.attributes.img.data.attributes.formats.large.url}`} alt={servicio.attributes.titulo} />
                         </div>
                         <div className="col-md-6">
                             <h2>{servicio.attributes.titulo}</h2>
