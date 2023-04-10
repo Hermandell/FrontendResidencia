@@ -50,7 +50,7 @@ const Home = () => {
           <div className="carousel-inner">
             {sliders.map((slider, index) => (
               <div key={index} className={`carousel-item ${index === 0 ? "active" : ""}`}>
-                <img width="10%" height="500" src={'https://residenciabackend.onrender.com'+slider.attributes.img.data.attributes.formats.large.url} className="d-block w-100" alt="..." />
+                <img width="10%" height="500" src={slider.attributes.img.data.attributes.formats.large.url} className="d-block w-100" alt="..." />
                 <div className="carousel-caption d-none d-md-block">
                   <h5>{slider.attributes.titulo}</h5>
                   <p>{slider.attributes.descripcion}</p>
