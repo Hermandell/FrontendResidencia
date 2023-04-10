@@ -29,7 +29,7 @@ const Servicios = () => {
     fetchData();
   }, []);
   servicios.map(item => {
-    console.log('https://residenciabackend.onrender.com' + item.attributes.img.data.attributes.formats.large.url)
+    console.log(item.attributes.img.data.attributes.formats.large.url)
     console.log(item.attributes.img.data.attributes.formats.large.url);
   })
   return (
